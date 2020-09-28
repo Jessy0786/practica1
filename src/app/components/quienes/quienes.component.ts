@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { HeroesService, Heroe } from '../services/heroes.service';
 
 @Component({
   selector: 'app-quienes',
@@ -6,10 +7,13 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./quienes.component.css']
 })
 export class QuienesComponent implements OnInit {
+  heroes: Heroe[] = [];
 
-  constructor() { }
+  constructor(private heroesService: HeroesService) { }
 
   ngOnInit(): void {
+    this.heroes = this.heroesService.getHeroes();
+    console.log(this.heroes);
   }
 
 }
