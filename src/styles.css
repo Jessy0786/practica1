@@ -30,3 +30,9 @@
 .fadeIn {
     animation-name: fadeIn;
 }
+
+h1 {
+    background-color: rgb(70, 94, 81);
+    color: rgb(246, 246, 252);
+    font-size: 100px
+}
