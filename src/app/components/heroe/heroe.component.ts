@@ -11,19 +11,17 @@ import { Router } from '@angular/router';
 export class HeroeComponent implements OnInit {
   heroes: Heroe[] = [];
   heroe: any;
-  id: string;
   nombre: string;
 
   constructor(private heroesService: HeroesService, private activatedRoute: ActivatedRoute, private router: Router) { }
 
   ngOnInit(): void {
-    this.heroes = this.heroesService.getHeroes();
     console.log(this.heroes);
     this.activatedRoute.params.subscribe((params) => {
     if (params.nombre != null){
       debugger;
       this.nombre = params.nombre;
-      this.heroe = this.heroesService.getHeroeDetalleName(params.nombre)[0];
+      this.heroe = this.heroesService.buscadorHeroe(this.nombre)[0];
     }
     });
     console.log('nombre : ' + this.nombre);

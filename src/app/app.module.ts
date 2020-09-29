@@ -11,6 +11,8 @@ import { MenuComponent } from './templates/menu/menu.component';
 import { AboutComponent } from './components/about/about.component';
 import { BuscadorComponent } from './components/buscador/buscador.component';
 import { HeroeComponent } from './components/heroe/heroe.component';
+import { ServiceWorkerModule } from '@angular/service-worker';
+import { environment } from '../environments/environment';
 
 @NgModule({
   declarations: [
@@ -26,7 +28,8 @@ import { HeroeComponent } from './components/heroe/heroe.component';
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    ServiceWorkerModule.register('ngsw-worker.js', { enabled: environment.production })
   ],
   providers: [],
   bootstrap: [AppComponent]

@@ -15,7 +15,7 @@ export class MenuComponent implements OnInit {
 
   buscarHeroe(termino: string){
     debugger;
-    console.log('buscarHeroe : ' + termino);
+    console.log('buscarHeroe: ' + termino);
     this.router.navigate(['/buscar', termino]);
   }
 

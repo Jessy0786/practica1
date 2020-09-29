@@ -19,7 +19,6 @@ export class BuscadorComponent implements OnInit {
       this.heroes = this.heroesService.buscadorHeroe(dato.ter);
     });
   }
-
   verHeroe(nombre: string){
     debugger;
     this.router.navigate(['/heroe', nombre]);
