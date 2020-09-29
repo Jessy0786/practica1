@@ -61,8 +61,32 @@ export class HeroesService {
     return this.heroes;
   }
 
-  getHeroeDetalle(id: number){
+  getHeroeDetalleId(id: number){
     return this.heroes[id];
+  }
+
+  getHeroeDetalleName(nombre: string){
+    let heroeItem: Heroe[] = [];
+    for (const heroe of this.heroes){
+      nombre = nombre.toLowerCase();
+      if (heroe.nombre.toLowerCase().indexOf(nombre) >= 0 ){
+        heroeItem.push(heroe);
+      }
+    }
+    return heroeItem;
+  }
+
+  buscadorHeroe(termino: string){
+    debugger;
+    let heroeItem: Heroe[] = [];
+    termino = termino.toLowerCase();
+    for (const heroe of this.heroes){
+      const nombre = heroe.nombre.toLowerCase();
+      if (nombre.indexOf(termino) >= 0 ){
+        heroeItem.push(heroe);
+      }
+    }
+    return heroeItem;
   }
 }
 

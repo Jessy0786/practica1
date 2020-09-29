@@ -16,9 +16,9 @@ export class QuienesComponent implements OnInit {
     this.heroes = this.heroesService.getHeroes();
     console.log(this.heroes);
   }
-  verHeroe(id: number){
-    console.log('Llego este : ' + id);
-    this.router.navigate(['/herore', id]);
+  verHeroe(nombre: string){
+    console.log('Llego este : ' + nombre);
+    this.router.navigate(['/heroe', nombre]);
   }
 
 }

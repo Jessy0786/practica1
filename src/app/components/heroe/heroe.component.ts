@@ -11,7 +11,8 @@ import { Router } from '@angular/router';
 export class HeroeComponent implements OnInit {
   heroes: Heroe[] = [];
   heroe: any;
-  id: number;
+  id: string;
+  nombre: string;
 
   constructor(private heroesService: HeroesService, private activatedRoute: ActivatedRoute, private router: Router) { }
 
@@ -19,18 +20,19 @@ export class HeroeComponent implements OnInit {
     this.heroes = this.heroesService.getHeroes();
     console.log(this.heroes);
     this.activatedRoute.params.subscribe((params) => {
-    this.id = params.id;
-    //this.heroe = this.heroesService.getHeroeDetalle(this.id);
-    this.heroe = this.heroes[this.id];
+    if (params.nombre != null){
+      debugger;
+      this.nombre = params.nombre;
+      this.heroe = this.heroesService.getHeroeDetalleName(params.nombre)[0];
+    }
     });
-    console.log('id : ' + this.id);
+    console.log('nombre : ' + this.nombre);
     console.log('heroe.img : ' + this.heroe.img);
     console.log('heroe.nombre : ' + this.heroe.nombre);
     console.log('heroe.bio : ' + this.heroe.bio);
     console.log('heroe.casa : ' + this.heroe.casa);
   }
 
-  verTodosHeores(){    
-    this.router.navigate(['/heroes']);
+  verTodosHeores(){this.router.navigate(['/heroes']);
   }
 }
