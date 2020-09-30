@@ -10,17 +10,24 @@ import { Router } from '@angular/router';
 })
 export class BuscadorComponent implements OnInit {
   heroes: Heroe[] = [];
+  resultadoBusqueda: string= '';
+  resultadoBusquedaClass: string= '';
 
   constructor(private heroesService: HeroesService, private activeRoute: ActivatedRoute , private router: Router) { }
 
   ngOnInit(): void {
     this.activeRoute.params.subscribe(dato =>{
-      console.log(dato.ter);
+      //console.log(dato.ter);
       this.heroes = this.heroesService.buscadorHeroe(dato.ter);
+      this.resultadoBusqueda = 'Se encontraron: ' + this.heroes.length + ' registros para : ' + dato.ter;
+      this.resultadoBusquedaClass = 'alert alert-success';
+      if (this.heroes.length <= 0){
+        this.resultadoBusqueda = 'No se encotraron resultados para : ' + dato.ter;
+        this.resultadoBusquedaClass = 'alert alert-danger';
+      }
     });
   }
   verHeroe(nombre: string){
-    debugger;
     this.router.navigate(['/heroe', nombre]);
   }
 

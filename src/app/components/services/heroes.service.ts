@@ -66,7 +66,6 @@ export class HeroesService {
   }
 
   buscadorHeroe(termino: string){
-    debugger;
     let heroeItem: Heroe[] = [];
     termino = termino.toLowerCase();
     for (const heroe of this.heroes){

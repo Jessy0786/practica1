@@ -14,9 +14,11 @@ export class MenuComponent implements OnInit {
   }
 
   buscarHeroe(termino: string){
-    debugger;
-    console.log('buscarHeroe: ' + termino);
-    this.router.navigate(['/buscar', termino]);
+    termino = termino.trim();
+    if (termino != null && termino.length){
+      console.log('buscarHeroe: ' + termino);
+      this.router.navigate(['/buscar', termino]);
+    }
   }
 
 }
