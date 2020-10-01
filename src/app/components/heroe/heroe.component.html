@@ -1,17 +1,15 @@
 <div class="container main-container">
-    <h1>{{heroe.nombre}}</h1>
-    <small>{{ heroe.aparicion}}</small>
+    <h1 class="display-4">{{heroe.nombre}} </h1>
+    <small>Primera aparicion {{ heroe.aparicion}}</small>
     <div class="row">
         <div class="card-columns">
-            <img [src]="heroe.img" alt="">
-
+            <img [src]="heroe.img" width="400" height="500" alt="">
             <br><br>
-            <a [routerLink]="'/heroes'" class="btn btn-outline-primary btn-bloc" (click)="verTodosHeores()">Heroes</a>
+            <a [routerLink]="'/heroes'" class="btn btn-outline-primary btn-block" (click)="verTodosHeores() ">Ver todos los Heroes</a>
             <br><br>
-            <div class="imglogo">
-                <img *ngIf="heroe.casa=='DC' " class="img-logo " src="assets/gif/logodccomicgif.gif" alt=" ">
+            <div class="imglogo ">
+                <img *ngIf="heroe.casa=='DC' " class="img-logo " src="assets/gif/logodccomicgif.gif " alt=" ">
                 <img *ngIf="heroe.casa=='Marvel' " class="img-logo " src="assets/gif/logomarvelgif.gif " alt=" ">
-
             </div>
         </div>
         <div class=" col-md-8 ">
@@ -20,7 +18,6 @@
             <p>
                 {{heroe.bio}}
             </p>
-
         </div>
     </div>
 </div>

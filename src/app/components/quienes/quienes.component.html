@@ -1,9 +1,9 @@
 <div class="container main-container">
-    <h1>Heroes</h1>
+    <h1 class="display-4">HEROES</h1>
     <small>Heroes de Marvel y DC</small>
     <div class="card-columns">
         <div class="card" *ngFor="let heroe of heroes;let i = index">
-            <img src="{{ heroe.img }}" class="card-img-top" alt="...">
+            <img src="{{ heroe.img }}"  width="400" height="500" class="card-img-top" alt="...">
             <div class="card-body">
                 <h5 class="card-title">{{ heroe.nombre }}</h5>
                 <p class="card-text">{{ heroe.bio }}</p>

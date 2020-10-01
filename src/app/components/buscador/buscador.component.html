@@ -1,5 +1,5 @@
 <div class="container main-container">
-    <h1>Heroes</h1>
+    <h1 class="display-4">Heroes</h1>
     <small>Heroes de Marvel y DC</small>
     <div class="{{resultadoBusquedaClass}}" role="alert">
         <strong>{{resultadoBusqueda}}</strong>
@@ -8,7 +8,7 @@
         <div class="card" *ngFor="let heroe of heroes;let i = index">
             <img src="{{ heroe.img }}" class="card-img-top" alt="...">
             <div class="card-body">
-                <h5 class="card-title">{{ heroe.nombre }}</h5>
+                <h5 class="card-title" class="display-4">{{ heroe.nombre }}</h5>
                 <p class="card-text">{{ heroe.bio }}</p>
                 <p class="card-text"><small class="text-muted">Primera Aparicion{{ heroe.aparicion }}</small></p>
                 <button class="btn btn-outline-primary btn-block" (click)="verHeroe(heroe.nombre)">Mas Informacion...</button>

@@ -9,7 +9,8 @@ import { BuscadorComponent } from './components/buscador/buscador.component';
 const routes: Routes = [
   {path: 'home', component: HomeComponent},
   {path: 'heroes', component: QuienesComponent},
-  {path: 'about', component: AboutComponent},
+  {path: 'aboutM/:marvelOrDC', component: AboutComponent},
+  {path: 'aboutD/:marvelOrDC', component: AboutComponent},
   {path: 'heroe/:nombre', component: HeroeComponent},
   {path: 'buscar/:ter', component: BuscadorComponent},
   {path: '**', pathMatch: 'full', redirectTo: 'home'}
