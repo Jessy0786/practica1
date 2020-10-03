@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { HeroesService, Heroe } from '../services/heroes.service';
 import { ActivatedRoute } from '@angular/router';
 import { Router } from '@angular/router';
+import {Location} from '@angular/common';
 
 @Component({
   selector: 'app-heroe',
@@ -13,7 +14,11 @@ export class HeroeComponent implements OnInit {
   heroe: any;
   nombre: string;
 
-  constructor(private heroesService: HeroesService, private activatedRoute: ActivatedRoute, private router: Router) { }
+  constructor(private heroesService: HeroesService,
+     private activatedRoute: ActivatedRoute,
+     private router: Router,private _location: Location) {
+
+  }
 
   ngOnInit(): void {
     console.log(this.heroes);
@@ -32,5 +37,8 @@ export class HeroeComponent implements OnInit {
   }
 
   verTodosHeores(){this.router.navigate(['/heroes']);
+  }
+  backClicked() {
+    this._location.back();
   }
 }
